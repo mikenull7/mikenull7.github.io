@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+
+    <script type="module" src="/main.js"></script>
+
+    <div class="scorebug">
+      <div class="team" id="blue">
+        <div id="name"></div>
+        <div id="score-bg">
+          <div id="score"></div>
+        </div>
+      </div>
+      <div class="clock"></div>
+      <div class="team" id="orange">
+        <div id="score-bg">
+          <div id="score"></div>
+        </div>
+        <div id="name"></div>
+      </div>
+    </div>
+
+    <div id="target-player">
+      <div class="boost">
+        <div id="target-boost-bg"></div>
+        <div id="target-boost-track-outer"></div>
+        <div id="target-boost-track-inner"></div>
+        <svg viewbox="0 0 160 160" id="target-boost-svg">
+          <circle r="71" cx="80" cy="80" id="target-boost-track-fill">
+  
+          </circle>
+        </svg>
+        <div id="target-boost-value-border">
+          <div id="target-boost-value"></div>
+        </div>
+  
+      </div>
+    </div>
+
+    <div id="target-player-card">
+      <div class="statcard" id="statcard">
+        <div id="target-statcard-bg"></div>
+        <div id="target-statcard-playername"></div>
+        <div class ="stat-img-row">
+          <img src="./stat_icons/goal.svg" alt="GoalsImage" width="40px" height="40px" style="margin-right: 10px;">
+          <img src="./stat_icons/assist.svg" alt="AssistsImage" width="40px" height="40px" style="margin-right: 10px;" >
+          <img src="./stat_icons/save.svg" alt="SavesImage" width="40px" height="40px" style="margin-right: 10px;">
+          <img src="./stat_icons/shot on goal.svg" alt="ShotsImage" width="40px" height="40px" style="margin-right: 10px;">
+          <img src="./stat_icons/mvp.svg" alt="ScoreImage" width="40px" height="40px" style="margin-right: 10px;">
+        </div>
+        <div id="target-statcard-goals"></div>
+        <div id="target-statcard-assists"></div>
+        <div id="target-statcard-saves"></div>
+        <div id="target-statcard-shots"></div>
+        <div id="target-statcard-score"></div>
+        </div>
+        </div> 
+
+        <div class="TeamLeftBoostMeters">
+          <div id="teamLeft-boost-bg-1"></div>
+          <div id="teamLeft-boost-bg-2"></div>
+          <div id="teamLeft-boost-bg-3"></div>
+          <svg id="teamLeft-boost-svg-1">
+            <rect  id="teamLeft-boost-track-fill-1">
+      
+      
+            </rect>
+          </svg>
+          <svg id="teamLeft-boost-svg-2">
+            <rect  id="teamLeft-boost-track-fill-2">
+      
+      
+            </rect>
+          </svg>
+          <svg id="teamLeft-boost-svg-3">
+            <rect  id="teamLeft-boost-track-fill-3">
+      
+      
+            </rect>
+          </svg>
+          <div id="bluenumbers"></div>
+            <div class="teamLeft" id="bluenames">
+          </div>
+          </div>
+          <div class="TeamRightBoostMeters">
+            <div id="teamRight-boost-bg-1"></div>
+            <div id="teamRight-boost-bg-2"></div>
+            <div id="teamRight-boost-bg-3"></div>
+            <svg id="teamRight-boost-svg-1">
+              <rect  id="teamRight-boost-track-fill-1">
+       
+              </rect>
+            </svg>
+            <svg id="teamRight-boost-svg-2">
+              <rect  id="teamRight-boost-track-fill-2">
+       
+              </rect>
+            </svg>
+            <svg id="teamRight-boost-svg-3">
+              <rect  id="teamRight-boost-track-fill-3">
+       
+              </rect>
+            </svg>
+            <div id="orangenumbers"></div>
+            <div class="teamRight" id="orangenames">
+             </div>
+           </div>
+        
+      <div class="Replay-Container" id="ScoreCard-Container">
+        <div id="replay-bg">
+          <div id="scorecard-bg"></div>
+        <div id="replay-text"></div>
+        <div id="replay-redlight"></div>
+          <div class="scorecard-container" id="ScoreCard">
+            <div id="Scorer"></div>
+            <div id="Assister"></div>
+            <div id="BallSpeed"></div>
+            <div id="GoalTime"></div>
+            <div class ="scorecard-img-row">
+              <img src="./stat_icons/goal.png" alt="GoalImage" width="50px" height="50px" style="position:absolute; -webkit-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -moz-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -ms-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -o-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              filter: drop-shadow(0 2px 3px rgba(0,0,0,1));">
+              <img id="AssisterImage" src="./stat_icons/assist.png" alt="AssistImage" width="40px" height="40px" style="position:absolute; right: 0px; -webkit-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -moz-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -ms-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -o-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              filter: drop-shadow(0 2px 3px rgba(0,0,0,1));" >
+              <img src="./stat_icons/overtime goal.png" alt="OverTimeGoalImage" width="40px" height="40px" style="position: absolute; top: 50px; right: 0px; -webkit-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -moz-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -ms-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -o-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              filter: drop-shadow(0 2px 3px rgba(0,0,0,1));">
+              <img src="./stat_icons/shot on goal.png" alt="ShotOnGoalImage" width="50px" height="50px" style="position:absolute; top: 45px; -webkit-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -moz-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -ms-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              -o-filter: drop-shadow(0 2px 3px rgba(0,0,0,1));
+              filter: drop-shadow(0 2px 3px rgba(0,0,0,1));" >
+            </div>
+            
+            </div>
+        </div>
+      </div>
+
+      <div class="Series-Container" id="Series-Container-bg">
+        <div id="Series-Text"></div>
+        <div id="blue-wins-bg"></div>
+        <div id="orange-wins-bg"></div>
+        <div id="blue-win-1"></div>
+        <div id="blue-win-2"></div>
+        <div id="blue-win-3"></div>
+        <div id="blue-win-4"></div>
+        <div id="orange-win-1"></div>
+        <div id="orange-win-2"></div>
+        <div id="orange-win-3"></div>
+        <div id="orange-win-4"></div>
+      </div>    
+
+      <div id="statfeed-container">
+
+      </div>
+      
+      
+        <div id="replay-logo">
+          <img src="./Overlay_images/replay-logo.gif" alt="replay-logo"
+          >
+        </div>
+      
+        <div id="overtime-logo">
+          <img src="./Overlay_images/overtime.jpeg" width="400px" height="50px">
+        </div>
+      
+        <div id="replay-swipe">
+          <img src="./Overlay_images/replay-swipe.gif" width="1920px" height="1080px">
+        </div>
+      
+      
+      
+
+        <video id="game-start-flyover" src="./Overlay_images/Flyover1.mp4" autoplay muted></video>
+        <video id="game-end-hypechamber" src="./Overlay_images/game_end_video.mp4" autoplay muted></video>
+
+       
+        <div class="PostGameData">
+          <video id="PostGame-bg" src="./Overlay_images/arrow shape glowing red and blue neon design neon lines movement in loop.mp4" autoplay muted loop></video>
+      
+          <div class="BlueTeam">
+              <div id="BlueTeamName"></div>
+              <div id="Blue-Score-bg">
+                  <div id="BlueScore"></div>
+              </div>
+              <div class="BluePlayers" id="BluePlayerNames">
+                  <div id="BluePlayer1"></div>
+                  <div id="BluePlayer2"></div>
+                  <div id="BluePlayer3"></div>
+              </div>
+              <!-- Stats for Blue Players -->
+              <div class="BluePlayerStats">
+                  <div id="BluePlayer1-stats"></div>
+                  <div id="BluePlayer2-stats"></div>
+                  <div id="BluePlayer3-stats"></div>
+              </div>
+              
+          </div>
+      
+          <div class="OrangeTeam">
+              <div id="OrangeTeamName"></div>
+              <div id="Orange-Score-bg">
+                  <div id="OrangeScore"></div>
+              </div>
+              <div class="OrangePlayers" id="OrangePlayerNames">
+                  <div id="OrangePlayer1"></div>
+                  <div id="OrangePlayer2"></div>
+                  <div id="OrangePlayer3"></div>
+              </div>
+              <!-- Stats for Orange Players -->
+              <div class="OrangePlayerStats">
+                  <div id="OrangePlayer1-stats"></div>
+                  <div id="OrangePlayer2-stats"></div>
+                  <div id="OrangePlayer3-stats"></div>
+              </div>
+              <div class="StatComparisonContainer">
+                <!-- Goals -->
+                <div class="StatBar">
+                  <div class="StatLabel">Goals</div>
+                  <div class="StatBarWrapper">
+                    <div id="BlueGoalsBar" class="StatBar-Blue"></div>
+                    <div id="OrangeGoalsBar" class="StatBar-Orange"></div>
+                  </div>
+                </div>
+                <!-- Assists -->
+                <div class="StatBar">
+                  <div class="StatLabel">Assists</div>
+                  <div class="StatBarWrapper">
+                    <div id="BlueAssistsBar" class="StatBar-Blue"></div>
+                    <div id="OrangeAssistsBar" class="StatBar-Orange"></div>
+                  </div>
+                </div>
+                <!-- Saves -->
+                <div class="StatBar">
+                  <div class="StatLabel">Saves</div>
+                  <div class="StatBarWrapper">
+                    <div id="BlueSavesBar" class="StatBar-Blue"></div>
+                    <div id="OrangeSavesBar" class="StatBar-Orange"></div>
+                  </div>
+                </div>
+                <!-- Shots -->
+                <div class="StatBar">
+                  <div class="StatLabel">Shots</div>
+                  <div class="StatBarWrapper">
+                    <div id="BlueShotsBar" class="StatBar-Blue"></div>
+                    <div id="OrangeShotsBar" class="StatBar-Orange"></div>
+                  </div>
+                </div>
+                <!-- Demos -->
+                <div class="StatBar">
+                  <div class="StatLabel">Demos</div>
+                  <div class="StatBarWrapper">
+                    <div id="BlueDemosBar" class="StatBar-Blue"></div>
+                    <div id="OrangeDemosBar" class="StatBar-Orange"></div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+      </div>
+      
+        
+    
+
+        </div>
+      </div>
+  
+  </body>
+</html>
