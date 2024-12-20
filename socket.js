@@ -1,5 +1,5 @@
 export const sosSocket = new WebSocket(
-  "ws://https://mikenull7-guthub-io.vercel.app/0"
+  "ws://https://mikenull7-guthub-io.vercel.app/"
 );
 
 sosSocket.onopen = () => {
