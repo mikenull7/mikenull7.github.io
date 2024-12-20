@@ -5,3 +5,7 @@ export const sosSocket = new WebSocket(
 sosSocket.onopen = () => {
   console.log("Connected to SOS.");
 };
+
+sosSocket.onmessage = (event) => {
+  console.log(event.data);
+};
