@@ -59,16 +59,16 @@ function updateWinDivs() {
 updateSeriesTitle();
 
 //PARSED DATA STARTS HERE//
+sosSocket.addEventListener("message", (event) => {
+  const message = event.data;
 
-sosSocket.onmessage = (event) => {
-  console.log(event.data);
-
-  sosSocket.onmessage = (message) => {
-    updateOverlay(message);
-    const parsed = JSON.parse(message);
-    console.log(parsed.event);
+  sosSocket.onmessage = (event) => {
+    console.log(event.data);
 
     // Update the UI with the new data (for example, update scores or player info)
+
+    const parsed = JSON.parse(message);
+    console.log(parsed.event);
 
     const gameStart = document.getElementById("game-start-flyover");
     const gameEnd = document.getElementById("game-end-hypechamber");
@@ -1059,4 +1059,4 @@ sosSocket.onmessage = (event) => {
       setElementsOpacity(0);
     }
   };
-};
+});
