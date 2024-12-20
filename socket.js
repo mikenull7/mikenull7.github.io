@@ -14,7 +14,7 @@ sosSocket.onmessage = (event) => {
   console.log(event.data);
 };
 
-forwardToOverlay = (message) => {
+export const forwardToOverlay = (message) => {
   const overlaySocket = new WebSocket("wss://mikenull7-guthub-io.vercel.app"); // Your Vercel WebSocket URL
 
   overlaySocket.onopen = () => {
