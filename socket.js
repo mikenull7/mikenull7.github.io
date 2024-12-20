@@ -1,6 +1,4 @@
-export const sosSocket = new WebSocket(
-  "wss://https://mikenull7-guthub-io.vercel.app/"
-);
+export const sosSocket = new WebSocket("ws://localhost:8080");
 
 sosSocket.onopen = () => {
   console.log("Connected to SOS.");
