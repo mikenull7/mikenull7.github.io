@@ -1,4 +1,4 @@
-export const sosSocket = new WebSocket("ws://localhost:49122");
+export const sosSocket = new WebSocket("ws://localhost:8080");
 
 sosSocket.onopen = () => {
   console.log("Connected to SOS.");
