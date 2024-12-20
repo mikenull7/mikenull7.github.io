@@ -433,7 +433,6 @@ sosSocket.addEventListener("message", (event) => {
       const icon = document.createElement("img");
       icon.className = "statfeed-icon";
       icon.src = `./${statEventType}.png`;
-      icon.alt = `${statEventType} icon`;
       iconContainer.appendChild(icon);
 
       // Create the text container for player names
