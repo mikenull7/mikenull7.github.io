@@ -432,7 +432,7 @@ sosSocket.addEventListener("message", (event) => {
       iconContainer.className = "statfeed-icon-container";
       const icon = document.createElement("img");
       icon.className = "statfeed-icon";
-      icon.src = `./${statEventType}.png`;
+      icon.src = `./Goal.png`;
       iconContainer.appendChild(icon);
 
       // Create the text container for player names
