@@ -432,7 +432,7 @@ sosSocket.addEventListener("message", (event) => {
       iconContainer.className = "statfeed-icon-container";
       const icon = document.createElement("img");
       icon.className = "statfeed-icon";
-      icon.src = `./stat_icons/${statEventType}.png`;
+      icon.src = `/stat_icons/${statEventType}.png`;
       icon.alt = `${statEventType} icon`;
       iconContainer.appendChild(icon);
 
