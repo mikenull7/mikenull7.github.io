@@ -868,7 +868,7 @@ transition: opacity .5s;
 
 
 .statfeed-icon {
-  display:contents;
+  display:block;
   width: 40px;
   height: 40px;
   position: relative;
