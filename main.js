@@ -65,7 +65,7 @@ sosSocket.addEventListener("message", (event) => {
   sosSocket.onmessage = (event) => {
     console.log(event.data);
 
-    function updateOverlay() {
+    function updateOverlay(event) {
       // Update the UI with the new data (for example, update scores or player info)
 
       const parsed = JSON.parse(message);
