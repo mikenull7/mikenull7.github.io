@@ -74,6 +74,11 @@ sosSocket.addEventListener("message", (event) => {
     const gameEnd = document.getElementById("game-end-hypechamber");
     const PostGameScoreboard = document.getElementById("PostGame-bg");
     const PostGameOverlay = document.querySelector(".PostGameData");
+    // Create a reference to the iframe
+    const iframe = document.getElementById("game-start-flyover");
+
+    // Create a Vimeo Player instance
+    const gameStartVideo = new Vimeo.Player(iframe);
 
     if (parsed.event === "game:update_state") {
       latestGameState = parsed.data; // Save the latest update state
@@ -632,6 +637,7 @@ sosSocket.addEventListener("message", (event) => {
       console.log("Match created");
       gameStart.style.opacity = 1;
       gameStart.play();
+      gameStartVideo.play();
 
       gameEnd.style.opacity = 0;
       const elements = {
