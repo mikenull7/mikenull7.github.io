@@ -70,15 +70,17 @@ sosSocket.addEventListener("message", (event) => {
     const parsed = JSON.parse(message);
     console.log(parsed.event);
 
-    const gameStart = document.getElementById("game-start-flyover");
-    const gameEnd = document.getElementById("game-end-hypechamber");
-    const PostGameScoreboard = document.getElementById("PostGame-bg");
+    //const gameStart = document.getElementById("game-start-flyover");
+    //const gameEnd = document.getElementById("game-end-hypechamber");
+    // const PostGameScoreboard = document.getElementById("PostGame-bg");
     const PostGameOverlay = document.querySelector(".PostGameData");
     // Create a reference to the iframe
     const iframe = document.getElementById("game-start-flyover");
+    const iframePodiumStart = document.getElementById("postgame-bg-video");
 
     // Create a Vimeo Player instance
     const gameStartVideo = new Vimeo.Player(iframe);
+    const PodiumStartVideo = new Vimeo.Player(iframePodiumStart);
 
     if (parsed.event === "game:update_state") {
       latestGameState = parsed.data; // Save the latest update state
@@ -873,6 +875,7 @@ sosSocket.addEventListener("message", (event) => {
       PostGameOverlay.style.opacity = 1;
       // Show the post-game scoreboard
       PostGameScoreboard.style.opacity = 1;
+      PodiumStartVideo.play();
 
       // Adjust font size for team names
       function adjustTeamFontSize(element, name) {
