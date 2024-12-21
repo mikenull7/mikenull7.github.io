@@ -636,7 +636,7 @@ sosSocket.addEventListener("message", (event) => {
     if (parsed.event === "game:match_created") {
       console.log("Match created");
       gameStart.style.opacity = 1;
-      gameStart.play();
+      // gameStart.play();
       gameStartVideo.play();
 
       gameEnd.style.opacity = 0;
