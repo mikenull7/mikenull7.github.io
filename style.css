@@ -634,6 +634,15 @@ transition: opacity .5s;
   font-weight: bold;
 }
 
+#Scorer-bg {
+  position: absolute;
+  background-color:#fd8b39;
+  width: 400px;
+  height: 150px;
+  top: 800px;
+  left: 750px;
+}
+
 #replay-bg {
   position:absolute;
   background-color: rgba(0,0,0,0.7);
@@ -666,6 +675,7 @@ transition: opacity .5s;
   position: absolute;
   font-family: Inter;
   font-size: 40px;
+  left: 40%;
 }
 
 
@@ -673,13 +683,14 @@ transition: opacity .5s;
   position: absolute;
   font-family: Inter;
   font-size: 40px;
-  right:0px;
+  top: 50%;
+  right: -100px;
 }
 
 
 #BallSpeed {
   position: absolute;
-  left: 0px;
+  left: -100px;
   top: 50%;
 }
 
@@ -687,7 +698,7 @@ transition: opacity .5s;
 #GoalTime {
   position: absolute;
   top: 50%;
-  left: 77%;
+  left: 40%;
 }
 
 #replay-text {
