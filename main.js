@@ -867,7 +867,6 @@ sosSocket.addEventListener("message", (event) => {
       PostGameOverlay.style.opacity = 1;
       // Show the post-game scoreboard
       PostGameScoreboard.style.opacity = 1;
-      PostGameScoreboard.play();
 
       // Adjust font size for team names
       function adjustTeamFontSize(element, name) {
