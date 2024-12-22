@@ -30,7 +30,7 @@ let orangeTeamWins = 0;
 let gamesPlayed = 1;
 let eventQueue = [];
 const eventDisplayTimeout = 2000;
-const matchCreatedVideo = document.querySelector(".MatchCreatedVideo iframe");
+const matchCreatedVideo = new Vimeo.Player("matchCreatedVideo");
 
 function updateSeriesTitle() {
   const seriesTextDiv = document.getElementById("Series-Text");
