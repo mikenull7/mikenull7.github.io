@@ -72,7 +72,7 @@ sosSocket.addEventListener("message", (event) => {
 
     const gameStart = document.getElementById("game-start-flyover");
     //const gameEnd = document.getElementById("game-end-hypechamber");
-    // const PostGameScoreboard = document.getElementById("PostGame-bg");
+    const PostGameScoreboard = document.getElementById("PostGame-bg");
     const PostGameOverlay = document.querySelector(".PostGameData");
 
     if (parsed.event === "game:update_state") {
