@@ -539,7 +539,7 @@ sosSocket.addEventListener("message", (event) => {
       ).style.borderColor = `#${OrangeColorPrimary}`;
       // POST GAME SCOREBOARD //
       document.querySelector(
-        "#Blue-Score-bg"
+        "#BlueScore.Score"
       ).style.backgroundColor = `#${BlueColorPrimary}`;
       document.querySelector(
         "#Orange-Score-bg"
