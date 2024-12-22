@@ -193,92 +193,100 @@
 
        
         <div class="PostGameData">
-          <video id="PostGame-bg" src="./Overlay_images/arrow shape glowing red and blue neon design neon lines movement in loop.mp4" autoplay muted loop></video>
-      
-          <div class="BlueTeam">
-              <div id="BlueTeamName"></div>
-              <div id="Blue-Score-bg">
-                  <div id="BlueScore"></div>
-              </div>
-              <div class="BluePlayers" id="BluePlayerNames">
-                  <div id="BluePlayer1"></div>
-                  <div id="BluePlayer2"></div>
-                  <div id="BluePlayer3"></div>
-              </div>
-              <!-- Stats for Blue Players -->
-              <div class="BluePlayerStats">
-                  <div id="BluePlayer1-stats"></div>
-                  <div id="BluePlayer2-stats"></div>
-                  <div id="BluePlayer3-stats"></div>
-              </div>
-              
-          </div>
-      
-          <div class="OrangeTeam">
-              <div id="OrangeTeamName"></div>
-              <div id="Orange-Score-bg">
-                  <div id="OrangeScore"></div>
-              </div>
-              <div class="OrangePlayers" id="OrangePlayerNames">
-                  <div id="OrangePlayer1"></div>
-                  <div id="OrangePlayer2"></div>
-                  <div id="OrangePlayer3"></div>
-              </div>
-              <!-- Stats for Orange Players -->
-              <div class="OrangePlayerStats">
-                  <div id="OrangePlayer1-stats"></div>
-                  <div id="OrangePlayer2-stats"></div>
-                  <div id="OrangePlayer3-stats"></div>
-              </div>
-              <div class="StatComparisonContainer">
-                <!-- Goals -->
-                <div class="StatBar">
-                  <div class="StatLabel">Goals</div>
-                  <div class="StatBarWrapper">
-                    <div id="BlueGoalsBar" class="StatBar-Blue"></div>
-                    <div id="OrangeGoalsBar" class="StatBar-Orange"></div>
-                  </div>
-                </div>
-                <!-- Assists -->
-                <div class="StatBar">
-                  <div class="StatLabel">Assists</div>
-                  <div class="StatBarWrapper">
-                    <div id="BlueAssistsBar" class="StatBar-Blue"></div>
-                    <div id="OrangeAssistsBar" class="StatBar-Orange"></div>
-                  </div>
-                </div>
-                <!-- Saves -->
-                <div class="StatBar">
-                  <div class="StatLabel">Saves</div>
-                  <div class="StatBarWrapper">
-                    <div id="BlueSavesBar" class="StatBar-Blue"></div>
-                    <div id="OrangeSavesBar" class="StatBar-Orange"></div>
-                  </div>
-                </div>
-                <!-- Shots -->
-                <div class="StatBar">
-                  <div class="StatLabel">Shots</div>
-                  <div class="StatBarWrapper">
-                    <div id="BlueShotsBar" class="StatBar-Blue"></div>
-                    <div id="OrangeShotsBar" class="StatBar-Orange"></div>
-                  </div>
-                </div>
-                <!-- Demos -->
-                <div class="StatBar">
-                  <div class="StatLabel">Demos</div>
-                  <div class="StatBarWrapper">
-                    <div id="BlueDemosBar" class="StatBar-Blue"></div>
-                    <div id="OrangeDemosBar" class="StatBar-Orange"></div>
-                  </div>
-                </div>
-              </div>
-              
-          </div>
-      </div>
-      
+          <!-- Vimeo Video -->
+          <iframe 
+            title="vimeo-player" 
+            src="https://player.vimeo.com/video/1041310035?h=70843b3da6" 
+            width="1920px" 
+            height="1080px" 
+            frameborder="0" 
+            allowfullscreen>
+          </iframe>
         
-    
-
+          <!-- Teams and Stats Section -->
+          <div class="TeamsContainer">
+            <!-- Blue Team Section -->
+            <div class="Team BlueTeam">
+              <div class="TeamName" id="BlueTeamName"></div>
+              <div class="ScoreBackground" id="Blue-Score-bg">
+                <div class="Score" id="BlueScore"></div>
+              </div>
+              <div class="Players" id="BluePlayerNames">
+                <div class="Player" id="BluePlayer1"></div>
+                <div class="Player" id="BluePlayer2"></div>
+                <div class="Player" id="BluePlayer3"></div>
+              </div>
+              <div class="PlayerStats">
+                <div class="PlayerStat" id="BluePlayer1-stats"></div>
+                <div class="PlayerStat" id="BluePlayer2-stats"></div>
+                <div class="PlayerStat" id="BluePlayer3-stats"></div>
+              </div>
+            </div>
+        
+            <!-- Orange Team Section -->
+            <div class="Team OrangeTeam">
+              <div class="TeamName" id="OrangeTeamName"></div>
+              <div class="ScoreBackground" id="Orange-Score-bg">
+                <div class="Score" id="OrangeScore"></div>
+              </div>
+              <div class="Players" id="OrangePlayerNames">
+                <div class="Player" id="OrangePlayer1"></div>
+                <div class="Player" id="OrangePlayer2"></div>
+                <div class="Player" id="OrangePlayer3"></div>
+              </div>
+              <div class="PlayerStats">
+                <div class="PlayerStat" id="OrangePlayer1-stats"></div>
+                <div class="PlayerStat" id="OrangePlayer2-stats"></div>
+                <div class="PlayerStat" id="OrangePlayer3-stats"></div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Stat Comparison Section -->
+          <div class="StatComparisonContainer">
+            <!-- Goals -->
+            <div class="StatBar">
+              <div class="StatLabel">Goals</div>
+              <div class="StatBarWrapper">
+                <div id="BlueGoalsBar" class="StatBar-Blue"></div>
+                <div id="OrangeGoalsBar" class="StatBar-Orange"></div>
+              </div>
+            </div>
+            <!-- Assists -->
+            <div class="StatBar">
+              <div class="StatLabel">Assists</div>
+              <div class="StatBarWrapper">
+                <div id="BlueAssistsBar" class="StatBar-Blue"></div>
+                <div id="OrangeAssistsBar" class="StatBar-Orange"></div>
+              </div>
+            </div>
+            <!-- Saves -->
+            <div class="StatBar">
+              <div class="StatLabel">Saves</div>
+              <div class="StatBarWrapper">
+                <div id="BlueSavesBar" class="StatBar-Blue"></div>
+                <div id="OrangeSavesBar" class="StatBar-Orange"></div>
+              </div>
+            </div>
+            <!-- Shots -->
+            <div class="StatBar">
+              <div class="StatLabel">Shots</div>
+              <div class="StatBarWrapper">
+                <div id="BlueShotsBar" class="StatBar-Blue"></div>
+                <div id="OrangeShotsBar" class="StatBar-Orange"></div>
+              </div>
+            </div>
+            <!-- Demos -->
+            <div class="StatBar">
+              <div class="StatLabel">Demos</div>
+              <div class="StatBarWrapper">
+                <div id="BlueDemosBar" class="StatBar-Blue"></div>
+                <div id="OrangeDemosBar" class="StatBar-Orange"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         </div>
       </div>
   

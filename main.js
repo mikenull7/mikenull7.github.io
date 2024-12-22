@@ -864,11 +864,9 @@ sosSocket.addEventListener("message", (event) => {
       console.log("Podium Started");
       console.log(latestGameState);
 
+      // Select PostGameData container
       const PostGameOverlay = document.querySelector(".PostGameData");
       PostGameOverlay.style.opacity = 1;
-      // Show the post-game scoreboard
-      PostGameScoreboard.style.opacity = 1;
-      PodiumStartVideo.play();
 
       // Adjust font size for team names
       function adjustTeamFontSize(element, name) {
@@ -876,11 +874,8 @@ sosSocket.addEventListener("message", (event) => {
         const minFontSize = 68;
         const maxNameLength = 11;
 
-        if (name.length > maxNameLength) {
-          element.style.fontSize = `${minFontSize}px`;
-        } else {
-          element.style.fontSize = `${maxFontSize}px`;
-        }
+        element.style.fontSize =
+          name.length > maxNameLength ? `${minFontSize}px` : `${maxFontSize}px`;
       }
 
       // Adjust font size for player names
@@ -889,17 +884,16 @@ sosSocket.addEventListener("message", (event) => {
         const minFontSize = 40;
         const maxNameLength = 9;
 
-        if (name.length > maxNameLength) {
-          element.style.fontSize = `${minFontSize}px`;
-        } else {
-          element.style.fontSize = `${maxFontSize}px`;
-        }
+        element.style.fontSize =
+          name.length > maxNameLength ? `${minFontSize}px` : `${maxFontSize}px`;
       }
 
       // Set team names and scores
       function setTeamNames(teams) {
-        const blueNameElement = document.getElementById("BlueTeamName");
-        const orangeNameElement = document.getElementById("OrangeTeamName");
+        const blueNameElement = document.querySelector(".BlueTeam .TeamName");
+        const orangeNameElement = document.querySelector(
+          ".OrangeTeam .TeamName"
+        );
 
         blueNameElement.innerHTML = teams[0].name;
         orangeNameElement.innerHTML = teams[1].name;
@@ -907,8 +901,8 @@ sosSocket.addEventListener("message", (event) => {
         adjustTeamFontSize(blueNameElement, teams[0].name);
         adjustTeamFontSize(orangeNameElement, teams[1].name);
 
-        const blueScoreElement = document.getElementById("BlueScore");
-        const orangeScoreElement = document.getElementById("OrangeScore");
+        const blueScoreElement = document.querySelector(".BlueTeam .Score");
+        const orangeScoreElement = document.querySelector(".OrangeTeam .Score");
 
         blueScoreElement.innerHTML = teams[0].score;
         orangeScoreElement.innerHTML = teams[1].score;
@@ -946,7 +940,6 @@ sosSocket.addEventListener("message", (event) => {
           demos: calculateTeamStatTotal(OrangeTeamPlayers, "demos"),
         };
 
-        // Helper to calculate bar percentages
         function setBarWidths(statName, blueValue, orangeValue) {
           const total = blueValue + orangeValue;
           const bluePercent = total > 0 ? (blueValue / total) * 100 : 0;
@@ -968,47 +961,44 @@ sosSocket.addEventListener("message", (event) => {
 
       // Set player names and stats dynamically
       function setPlayerNamesAndStats() {
-        // Blue Team
         BlueTeamPlayers.forEach((player, index) => {
-          const playerElement = document.getElementById(
-            `BluePlayer${index + 1}`
+          const playerElement = document.querySelector(
+            `.BlueTeam .Players .Player:nth-child(${index + 1})`
           );
           playerElement.innerHTML = player.name;
           adjustPlayerFontSize(playerElement, player.name);
 
-          const playerStatsElement = document.getElementById(
-            `BluePlayer${index + 1}-stats`
+          const playerStatsElement = document.querySelector(
+            `.BlueTeam .PlayerStats .PlayerStat:nth-child(${index + 1})`
           );
           playerStatsElement.innerHTML = `
-          ${player.goals}<br>
-          ${player.assists}<br>
-          ${player.saves}<br>
-          ${player.shots}<br>
-          ${player.demos}
-        `;
+            ${player.goals}<br>
+            ${player.assists}<br>
+            ${player.saves}<br>
+            ${player.shots}<br>
+            ${player.demos}
+          `;
         });
 
-        // Orange Team
         OrangeTeamPlayers.forEach((player, index) => {
-          const playerElement = document.getElementById(
-            `OrangePlayer${index + 1}`
+          const playerElement = document.querySelector(
+            `.OrangeTeam .Players .Player:nth-child(${index + 1})`
           );
           playerElement.innerHTML = player.name;
           adjustPlayerFontSize(playerElement, player.name);
 
-          const playerStatsElement = document.getElementById(
-            `OrangePlayer${index + 1}-stats`
+          const playerStatsElement = document.querySelector(
+            `.OrangeTeam .PlayerStats .PlayerStat:nth-child(${index + 1})`
           );
           playerStatsElement.innerHTML = `
-          ${player.goals}<br>
-          ${player.assists}<br>
-          ${player.saves}<br>
-          ${player.shots}<br>
-          ${player.demos}
-        `;
+            ${player.goals}<br>
+            ${player.assists}<br>
+            ${player.saves}<br>
+            ${player.shots}<br>
+            ${player.demos}
+          `;
         });
 
-        // Update stat comparison bars
         updateStatBars();
       }
 
