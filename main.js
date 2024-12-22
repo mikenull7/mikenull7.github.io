@@ -30,6 +30,7 @@ let orangeTeamWins = 0;
 let gamesPlayed = 1;
 let eventQueue = [];
 const eventDisplayTimeout = 2000;
+const matchCreatedVideo = document.querySelector(".MatchCreatedVideo iframe");
 
 function updateSeriesTitle() {
   const seriesTextDiv = document.getElementById("Series-Text");
@@ -380,9 +381,11 @@ sosSocket.addEventListener("message", (event) => {
 
     if (parsed.event === "game:pre_countdown_begin") {
       gameStart.style.opacity = 0;
+      matchCreatedVideo.style.opacity = 0;
     }
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
+      matchCreatedVideo.currentTime = 0;
     }
 
     if (parsed.event === "game:match_ended") {
@@ -634,6 +637,7 @@ sosSocket.addEventListener("message", (event) => {
       gameStart.play();
       PostGameOverlay.style.opacity = 0;
       gameEnd.style.opacity = 0;
+      matchCreatedVideo.play();
 
       const elements = {
         scorebug: document.querySelector(".scorebug"),
