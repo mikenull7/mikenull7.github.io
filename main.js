@@ -545,10 +545,10 @@ sosSocket.addEventListener("message", (event) => {
         ".Score #OrangeScore"
       ).style.backgroundColor = `#${OrangeColorPrimary}`;
       document.querySelector(
-        "#BlueTeamName"
+        ".BlueTeam .TeamName"
       ).style.borderColor = `#${BlueColorPrimary}`;
       document.querySelector(
-        "#OrangeTeamName"
+        ".OrangeTeam .TeamName"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       //POST GAME PLAYER STATS //
       document.querySelector(
