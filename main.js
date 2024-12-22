@@ -90,7 +90,7 @@ sosSocket.addEventListener("message", (event) => {
       });
     }
 
-    const PodiumStartVideo = new Vimeo.Player(iframePodiumStart);
+    // const PodiumStartVideo = new Vimeo.Player(iframePodiumStart);
 
     if (parsed.event === "game:update_state") {
       latestGameState = parsed.data; // Save the latest update state
