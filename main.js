@@ -71,7 +71,7 @@ sosSocket.addEventListener("message", (event) => {
     console.log(parsed.event);
 
     const gameStart = document.getElementById("game-start-flyover");
-    //const gameEnd = document.getElementById("game-end-hypechamber");
+    const gameEnd = document.getElementById("game-end-hypechamber");
     const PostGameScoreboard = document.getElementById("PostGame-bg");
     const PostGameOverlay = document.querySelector(".PostGameData");
 
@@ -294,7 +294,7 @@ sosSocket.addEventListener("message", (event) => {
         overtimeLogo.style.opacity = 0;
       }
     }
-
+    // SERIES CONTAINER
     if (parsed.event === "game:update_state") {
       const Teams = parsed.data.game.teams;
       //  console.log(Teams);
