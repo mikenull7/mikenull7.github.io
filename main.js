@@ -1042,8 +1042,8 @@ sosSocket.addEventListener("message", (event) => {
 
     if (parsed.event === "game:initialized") {
       console.log("Match initialized");
-      gameStart.style.opacity = 1;
-      gameStart.play();
+      // gameStart.style.opacity = 1;
+      //  gameStart.play();
 
       gameEnd.style.opacity = 0;
       const elements = {
