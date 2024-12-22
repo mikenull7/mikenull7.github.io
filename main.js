@@ -1021,7 +1021,7 @@ sosSocket.addEventListener("message", (event) => {
       //  gameStart.play();
       PostGameOverlay.style.opacity = 0;
       // Play Match Created Video
-      let matchCreatedVideo = document.getElementById("MatchCreatedVideo", {
+      let matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
         id: 1041310123, // Match Created Vimeo video ID
         loop: true,
         autoplay: false, // We'll control autoplay manually
