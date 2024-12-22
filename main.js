@@ -30,7 +30,7 @@ let orangeTeamWins = 0;
 let gamesPlayed = 1;
 let eventQueue = [];
 const eventDisplayTimeout = 2000;
-let matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
+let matchCreatedVideo = document.getElementById("MatchCreatedVideo", {
   id: 1041310123, // Match Created Vimeo video ID
   loop: true,
   autoplay: false, // We'll control autoplay manually
