@@ -975,16 +975,15 @@ transition: opacity .5s;
 
 /* TeamsContainer for both teams */
 .TeamsContainer {
-  position: relative;
-  width: 100%;
-  display: flex;
+  position: absolute;
+  top: 50px;
   justify-content: space-between;
-  padding: 20px 50px;
+  height: 1080px;
+  width: 1920px;
 }
 
 /* Shared team styling */
 .Team {
-  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -998,22 +997,28 @@ transition: opacity .5s;
   color: white;
   letter-spacing: 5px;
   background-color: #333;
+  border-color: #1f94e9;
   border-style: solid;
-  border-radius: 8px;
-  padding: 10px 20px;
+  border-radius: 8px 0px 0px 8px;
   max-width: 800px;
-  white-space: nowrap;
-  flex-grow: 1;
+  min-width: 800px;
+  max-height: 100px;
+  min-height: 100px;
+  place-items: center;
+  position: absolute;
 }
 
 .BlueTeam .TeamName {
   border-color: #1f94e9;
   border-radius: 8px 0 0 8px;
+  
+  
 }
 
 .OrangeTeam .TeamName {
   border-color: #fd8b39;
   border-radius: 0 8px 8px 0;
+  right: 0px;
 }
 
 /* Score styling */
@@ -1026,14 +1031,41 @@ transition: opacity .5s;
   padding: 10px;
   border-radius: 8px;
   width: 80px;
+  position:absolute;
+  font-family: Inter;
 }
 
 .BlueTeam .Score {
-  background-color: #1f94e9;
+  color: white;
+  position: absolute;
+  height: 100px;
+  width: 80px;
+  border-radius: 0px 8px 8px 0px;
+  background-color:#1f94e9;
+  text-align: center;
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  left: 797px;
 }
 
 .OrangeTeam .Score {
   background-color: #fd8b39;
+  color: white;
+  position: absolute;
+  height: 100px;
+  width: 80px;
+  border-radius: 8px 0px 0px 8px;
+  text-align: center;
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  top: 0px;
+  right: 797px;
 }
 
 /* Player names container */
@@ -1052,59 +1084,129 @@ transition: opacity .5s;
   margin: 20px auto;
 }
 
-.BlueTeam .PlayerNames {
+#BluePlayerNames {
+  position: absolute;
+  font-family: Inter;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  font-size: 50px;
+  top: 250px;
+  left: 50px;
+  background-color: #333;
   border-color: #1f94e9;
+  border-style: solid;
+  border-radius: 8px;
+  width: 800px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 266px 266px 266px;
+  place-items: center;
+  
 }
 
-.OrangeTeam .PlayerNames {
+#OrangePlayerNames {
+  position: absolute;
+  font-family: Inter;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  font-size: 50px;
+  top: 250px;
+  right: 50px;
+  background-color: rgba(0, 0, 0, .5);
+  width: 800px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 266px 266px 266px;
+  align-items: center;
+  text-align: center;
+  background-color: #333;
   border-color: #fd8b39;
+  border-style: solid;
+  border-radius: 8px;
 }
 
 /* Player stats container */
-.PlayerStats {
+.BlueTeam .PlayerStats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
   font-size: 24px;
   color: white;
-}
-
-.PlayerStats .PlayerStat {
+  position: absolute;
+  top: 350px;
+  left: 50px;
+  text-align: center; /* Centers text inside each stat div */
+  font-size: 24px; /* Adjust font size as needed */
+  line-height: 2; /* Increases space between lines within the stat div */
+  padding-bottom: 5px;
+  width: 800px;
+  border-bottom: 5px solid #1f94e9;
+  font-family: Inter;
+  font-size: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Or adjust width to fit within the player grid */
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
 }
 
-.BlueTeam .PlayerStats .PlayerStat {
-  border-bottom: 2px solid #1f94e9;
-}
-
-.OrangeTeam .PlayerStats .PlayerStat {
-  border-bottom: 2px solid #fd8b39;
+.OrangeTeam .PlayerStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  font-size: 24px;
+  color: white;
+  position: absolute;
+  top: 350px;
+  right: 50px;
+  text-align: center; /* Centers text inside each stat div */
+  font-size: 24px; /* Adjust font size as needed */
+  line-height: 2; /* Increases space between lines within the stat div */
+  padding-bottom: 5px;
+  width: 800px;
+  border-bottom: 5px solid #fd8b39;
+  font-family: Inter;
+  font-size: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Or adjust width to fit within the player grid */
+  text-align: center;
+  border-radius: 0px 0px 8px 8px;
 }
 
 /* Stat comparison container */
 .StatComparisonContainer {
-  margin-top: 30px;
+  margin-top: 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  position: relative;
+  top: -285px;
 }
 
 .StatBar {
   display: flex;
+  font-family: Inter;
   align-items: center;
   gap: 10px;
-  font-family: Inter;
+  position: relative;
+  line-height: 3.75;
+  left: -328px;
+  top: -275px;
+  width: 325px;
 }
 
 .StatLabel {
-  flex: 0 0 100px;
+  width: 100px;
   font-size: 24px;
   font-weight: bold;
-  color: #fff;
+  text-align: left;
+  color:azure;
+  position: relative;
+  left: 1225px;
+  top: -140px;
   text-align: center;
 }
 
@@ -1114,6 +1216,9 @@ transition: opacity .5s;
   background-color: rgba(0, 0, 0, 0.4);
   position: relative;
   display: flex;
+  top: -100px;
+  left: 1072px;
+  height: 30px;
 }
 
 .StatBar-Blue {
