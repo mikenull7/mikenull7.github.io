@@ -1028,9 +1028,7 @@ sosSocket.addEventListener("message", (event) => {
         width: 1920,
         height: 1080,
       });
-      matchCreatedVideo.play().catch((error) => {
-        console.error("Error playing Match Created video:", error);
-      });
+      matchCreatedVideo.play();
 
       gameEnd.style.opacity = 0;
       const elements = {
