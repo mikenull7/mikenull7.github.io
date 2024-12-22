@@ -538,30 +538,30 @@ sosSocket.addEventListener("message", (event) => {
         ".team#orange"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       // POST GAME SCOREBOARD //
-      document.getElementById(
-        "BlueScore"
+      document.querySelector(
+        ".Score #BlueScore"
       ).style.backgroundColor = `#${BlueColorPrimary}`;
-      document.getElementById(
-        "OrangeScore"
+      document.querySelector(
+        ".Score #OrangeScore"
       ).style.backgroundColor = `#${OrangeColorPrimary}`;
-      document.getElementById(
-        "BlueTeamName"
+      document.querySelector(
+        "#BlueTeamName"
       ).style.borderColor = `#${BlueColorPrimary}`;
-      document.getElementById(
-        "OrangeTeamName"
+      document.querySelector(
+        "#OrangeTeamName"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       //POST GAME PLAYER STATS //
       document.querySelector(
-        ".BluePlayers"
+        ".BluePlayerNames"
       ).style.borderColor = `#${BlueColorPrimary}`;
       document.querySelector(
-        ".OrangePlayers"
+        ".OrangePlayerNames"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       document.querySelector(
-        ".BluePlayerStats"
+        ".StatBar-Blue"
       ).style.borderColor = `#${BlueColorPrimary}`;
       document.querySelector(
-        ".OrangePlayerStats"
+        ".StatBar-Orange"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       // STAT BAR COLORS //
       const BlueStatBarFIllColors = {
