@@ -538,17 +538,17 @@ sosSocket.addEventListener("message", (event) => {
         ".team#orange"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       // POST GAME SCOREBOARD //
-      document.querySelector(
-        ".BlueTeam .Score"
+      document.getElementById(
+        "BlueScore"
       ).style.backgroundColor = `#${BlueColorPrimary}`;
-      document.querySelector(
-        "#Orange-Score-bg"
+      document.getElementById(
+        "OrangeScore"
       ).style.backgroundColor = `#${OrangeColorPrimary}`;
-      document.querySelector(
-        "#BlueTeamName"
+      document.getElementById(
+        "BlueTeamName"
       ).style.borderColor = `#${BlueColorPrimary}`;
-      document.querySelector(
-        "#OrangeTeamName"
+      document.getElementById(
+        "OrangeTeamName"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       //POST GAME PLAYER STATS //
       document.querySelector(
