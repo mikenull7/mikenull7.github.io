@@ -545,7 +545,7 @@ sosSocket.addEventListener("message", (event) => {
         ".Score #OrangeScore"
       ).style.backgroundColor = `#${OrangeColorPrimary}`;
       document.querySelector(
-        "#BlueTeamName"
+        ".BlueTeam .TeamName"
       ).style.borderColor = `#${BlueColorPrimary}`;
       document.querySelector(
         ".OrangeTeam .TeamName"
