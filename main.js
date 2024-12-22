@@ -552,10 +552,10 @@ sosSocket.addEventListener("message", (event) => {
       ).style.borderColor = `#${OrangeColorPrimary}`;
       //POST GAME PLAYER STATS //
       document.querySelector(
-        ".BluePlayerNames"
+        "#BluePlayerNames"
       ).style.borderColor = `#${BlueColorPrimary}`;
       document.querySelector(
-        ".OrangePlayerNames"
+        "#OrangePlayerNames"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       document.querySelector(
         ".StatBar-Blue"
