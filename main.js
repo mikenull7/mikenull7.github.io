@@ -646,6 +646,7 @@ sosSocket.addEventListener("message", (event) => {
     }
 
     if (parsed.event === "game:match_created") {
+      gameStartPlayer = new YT.Player("game-start-flyover");
       console.log("Match created");
       // gameStart.style.opacity = 1;
       // gameStart.play();
