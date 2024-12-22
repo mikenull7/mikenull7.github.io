@@ -70,27 +70,10 @@ sosSocket.addEventListener("message", (event) => {
     const parsed = JSON.parse(message);
     console.log(parsed.event);
 
-    //const gameStart = document.getElementById("game-start-flyover");
+    const gameStart = document.getElementById("game-start-flyover");
     //const gameEnd = document.getElementById("game-end-hypechamber");
     // const PostGameScoreboard = document.getElementById("PostGame-bg");
     const PostGameOverlay = document.querySelector(".PostGameData");
-    const iframePodiumStart = document.getElementById("postgame-bg-video");
-    const scriptTag = document.createElement("script");
-    scriptTag.src = "https://www.youtube.com/iframe_api";
-    document.body.appendChild(scriptTag);
-
-    let gameStartPlayer;
-
-    // Initialize the YouTube Player
-    function onYouTubeIframeAPIReady() {
-      gameStartPlayer = new YT.Player("game-start-flyover", {
-        events: {
-          onReady: onPlayerReady,
-        },
-      });
-    }
-
-    // const PodiumStartVideo = new Vimeo.Player(iframePodiumStart);
 
     if (parsed.event === "game:update_state") {
       latestGameState = parsed.data; // Save the latest update state
@@ -652,6 +635,7 @@ sosSocket.addEventListener("message", (event) => {
       // gameStart.play();
       // gameStartVideo.play();
       gameStartPlayer.playVideo();
+      PostGameOverlay.style.opacity = 0;
 
       gameEnd.style.opacity = 0;
       const elements = {
@@ -1045,6 +1029,7 @@ sosSocket.addEventListener("message", (event) => {
       console.log("Match initialized");
       // gameStart.style.opacity = 1;
       //  gameStart.play();
+      PostGameOverlay.style.opacity = 0;
 
       gameEnd.style.opacity = 0;
       const elements = {
