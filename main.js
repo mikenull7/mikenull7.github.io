@@ -629,15 +629,12 @@ sosSocket.addEventListener("message", (event) => {
     }
 
     if (parsed.event === "game:match_created") {
-      gameStartPlayer = new YT.Player("game-start-flyover");
       console.log("Match created");
-      // gameStart.style.opacity = 1;
-      // gameStart.play();
-      // gameStartVideo.play();
-      gameStartPlayer.playVideo();
+      gameStart.style.opacity = 1;
+      gameStart.play();
       PostGameOverlay.style.opacity = 0;
-
       gameEnd.style.opacity = 0;
+
       const elements = {
         scorebug: document.querySelector(".scorebug"),
         teamLeftMeters: document.querySelector(".TeamLeftBoostMeters"),
