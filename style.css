@@ -1041,7 +1041,6 @@ transition: opacity .5s;
   height: 100px;
   width: 80px;
   border-radius: 0px 8px 8px 0px;
-  background-color:#1f94e9;
   text-align: center;
   font-size: 64px;
   font-weight: bold;
@@ -1051,8 +1050,8 @@ transition: opacity .5s;
   left: 797px;
 }
 
+
 .OrangeTeam .Score {
-  background-color: #fd8b39;
   color: white;
   position: absolute;
   height: 100px;
@@ -1193,7 +1192,7 @@ transition: opacity .5s;
   gap: 10px;
   position: relative;
   line-height: 3.75;
-  left: -328px;
+  left: -329px;
   top: -275px;
   width: 325px;
 }
@@ -1205,7 +1204,7 @@ transition: opacity .5s;
   text-align: left;
   color:azure;
   position: relative;
-  left: 1225px;
+  left: 1245px;
   top: -140px;
   text-align: center;
 }
