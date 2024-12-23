@@ -30,6 +30,13 @@ let orangeTeamWins = 0;
 let gamesPlayed = 1;
 let eventQueue = [];
 const eventDisplayTimeout = 2000;
+let matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
+  id: 1041310123, // Match Created Vimeo video ID
+  loop: true,
+  autoplay: false, // We'll control autoplay manually
+  width: 1920,
+  height: 1080,
+});
 
 function updateSeriesTitle() {
   const seriesTextDiv = document.getElementById("Series-Text");
@@ -1021,13 +1028,6 @@ sosSocket.addEventListener("message", (event) => {
       //  gameStart.play();
       PostGameOverlay.style.opacity = 0;
       // Play Match Created Video
-      let matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
-        id: 1041310123, // Match Created Vimeo video ID
-        loop: true,
-        autoplay: false, // We'll control autoplay manually
-        width: 1920,
-        height: 1080,
-      });
       matchCreatedVideo.play();
 
       gameEnd.style.opacity = 0;
