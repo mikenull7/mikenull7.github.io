@@ -37,6 +37,9 @@ let matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
   width: 1920,
   height: 1080,
 });
+let MatchCreatedVideoContainer = document.getElementById(
+  "MatchCreatedVideoContainer"
+);
 
 function updateSeriesTitle() {
   const seriesTextDiv = document.getElementById("Series-Text");
@@ -643,6 +646,8 @@ sosSocket.addEventListener("message", (event) => {
       gameStart.play();
       PostGameOverlay.style.opacity = 0;
       gameEnd.style.opacity = 0;
+      MatchCreatedVideoContainer.style.opacity = 1;
+      MatchCreatedVideoContainer.style.display = "block";
       matchCreatedVideo.play();
 
       const elements = {
@@ -695,11 +700,7 @@ sosSocket.addEventListener("message", (event) => {
         SeriesOrange4: document.getElementById("orange-wins-4"),
       };
 
-      const matchCreatedVideoContainer = document.getElementById(
-        "MatchCreatedVideoContainer"
-      );
-
-      matchCreatedVideoContainer.style.display = "none";
+      MatchCreatedVideoContainer.style.display = "none";
 
       // Function to set opacity of all elements
       function setElementsOpacity(opacityValue) {
@@ -715,6 +716,10 @@ sosSocket.addEventListener("message", (event) => {
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
       gameEnd.currentTime = 0;
+      function resetMatchCreatedVideo() {
+        matchCreatedVideo.setCurrentTime(0);
+      }
+      resetMatchCreatedVideo();
     }
 
     const DefaultColor = "373d4a";
