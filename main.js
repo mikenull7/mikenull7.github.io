@@ -390,11 +390,10 @@ sosSocket.addEventListener("message", (event) => {
 
     if (parsed.event === "game:pre_countdown_begin") {
       gameStart.style.opacity = 0;
-      matchCreatedVideo.style.opacity = 0;
+      MatchCreatedVideoContainer.style.opacity = 0;
     }
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
-      matchCreatedVideo.currentTime = 0;
     }
 
     if (parsed.event === "game:match_ended") {

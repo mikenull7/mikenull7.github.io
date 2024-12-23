@@ -1234,6 +1234,6 @@ opacity: 0;
 }
 
 .MatchCreatedVideoContainer {
-  opacity: 0;
-  display: none;
+  opacity: 1;
+  display: block;
 }
