@@ -37,7 +37,7 @@ const matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
   width: 1920,
   height: 1080,
 });
-let MatchCreatedVideoContainer = document.querySelector(
+const MatchCreatedVideoContainer = document.querySelector(
   ".MatchCreatedVideoContainer"
 );
 
