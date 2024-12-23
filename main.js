@@ -701,6 +701,7 @@ sosSocket.addEventListener("message", (event) => {
       };
 
       MatchCreatedVideoContainer.style.display = "none";
+      MatchCreatedVideoContainer.style.opacity = 0;
 
       // Function to set opacity of all elements
       function setElementsOpacity(opacityValue) {
