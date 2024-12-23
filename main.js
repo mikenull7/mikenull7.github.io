@@ -388,10 +388,6 @@ sosSocket.addEventListener("message", (event) => {
       }, 1000);
     }
 
-    if (parsed.event === "game:pre_countdown_begin") {
-      gameStart.style.opacity = 0;
-      MatchCreatedVideoContainer.style.opacity = 0;
-    }
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
     }
@@ -698,10 +694,6 @@ sosSocket.addEventListener("message", (event) => {
         SeriesOrange3: document.getElementById("orange-wins-3"),
         SeriesOrange4: document.getElementById("orange-wins-4"),
       };
-
-      MatchCreatedVideoContainer.style.display = "none";
-      MatchCreatedVideoContainer.style.opacity = 0;
-
       // Function to set opacity of all elements
       function setElementsOpacity(opacityValue) {
         Object.values(elements).forEach((element) => {
@@ -712,6 +704,9 @@ sosSocket.addEventListener("message", (event) => {
       }
       // Set opacity to 1 when the pre countdown begins
       setElementsOpacity(1);
+      gameStart.style.opacity = 0;
+      MatchCreatedVideoContainer.style.display = "none";
+      MatchCreatedVideoContainer.style.opacity = 0;
     }
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
