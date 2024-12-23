@@ -695,7 +695,9 @@ sosSocket.addEventListener("message", (event) => {
         SeriesOrange4: document.getElementById("orange-wins-4"),
       };
 
-      let matchCreatedVideo = document.getElementById("matchCreatedVideo");
+      let matchCreatedVideo = document.getElementById(
+        "MatchCreatedVideoContainer"
+      );
 
       matchCreatedVideo.style.opacity = 0;
 
@@ -1032,6 +1034,7 @@ sosSocket.addEventListener("message", (event) => {
       //  gameStart.play();
       PostGameOverlay.style.opacity = 0;
       // Play Match Created Video
+      matchCreatedVideo.style.opacity = 1;
       matchCreatedVideo.play();
 
       gameEnd.style.opacity = 0;
