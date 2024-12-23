@@ -683,7 +683,6 @@ sosSocket.addEventListener("message", (event) => {
         teamRightMeters: document.querySelector(".TeamRightBoostMeters"),
         blueTeamName: document.querySelector("#blue-team-name"),
         orangeTeamName: document.querySelector("#orange-team-name"),
-        overtimeLogo: document.querySelector("#overtime-logo"),
         SeriesText: document.getElementById("Series-Container-bg"),
         SeriesBlue1: document.getElementById("blue-win-1"),
         SeriesBlue2: document.getElementById("blue-win-2"),
@@ -705,8 +704,9 @@ sosSocket.addEventListener("message", (event) => {
       // Set opacity to 1 when the pre countdown begins
       setElementsOpacity(1);
       gameStart.style.opacity = 0;
-      MatchCreatedVideoContainer.style.display = "none";
-      MatchCreatedVideoContainer.style.opacity = 0;
+      if (MatchCreatedVideoContainer) {
+        MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
+      }
     }
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
