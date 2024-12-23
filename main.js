@@ -695,6 +695,8 @@ sosSocket.addEventListener("message", (event) => {
         SeriesOrange4: document.getElementById("orange-wins-4"),
       };
 
+      matchCreatedVideo.style.display = "none";
+
       // Function to set opacity of all elements
       function setElementsOpacity(opacityValue) {
         Object.values(elements).forEach((element) => {
