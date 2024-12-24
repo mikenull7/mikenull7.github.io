@@ -645,11 +645,10 @@ sosSocket.addEventListener("message", (event) => {
 
     if (parsed.event === "game:match_created") {
       console.log("Match created");
-      gameStart.style.opacity = 1;
-      gameStart.play();
+      //gameStart.style.opacity = 1;
+      // gameStart.play();
       PostGameOverlay.style.opacity = 0;
-      gameEnd.style.opacity = 0;
-      matchCreatedVideo.play();
+      // gameEnd.style.opacity = 0;
 
       const elements = {
         scorebug: document.querySelector(".scorebug"),
