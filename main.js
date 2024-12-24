@@ -86,10 +86,7 @@ sosSocket.addEventListener("message", (event) => {
     if (parsed.event === "game:update_state") {
       latestGameState = parsed.data; // Save the latest update state
     }
-    if (parsed.event === "game:pre_countdown_begin") {
-      MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
-      matchCreatedVideo.pause();
-    }
+
     if (parsed.event === "game:update_state") {
       if (parsed.data.game.hasTarget) {
         const targetPlayer = parsed.data.players[parsed.data.game.target];
@@ -708,13 +705,14 @@ sosSocket.addEventListener("message", (event) => {
       MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
       matchCreatedVideo.pause();
     }
+    if (parsed.event === "game:pre_countdown_begin") {
+      MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
+      matchCreatedVideo.pause();
+    }
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
       gameEnd.currentTime = 0;
-      function resetMatchCreatedVideo() {
-        matchCreatedVideo.setCurrentTime(0);
-      }
-      resetMatchCreatedVideo();
+      matchCreatedVideo.setCurrentTime(0);
     }
 
     const DefaultColor = "373d4a";
