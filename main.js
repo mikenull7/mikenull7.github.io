@@ -1028,6 +1028,7 @@ sosSocket.addEventListener("message", (event) => {
       //  gameStart.play();
       PostGameOverlay.style.opacity = 0;
       // Play Match Created Video
+      MatchCreatedVideoContainer.style.opacity = 1;
       matchCreatedVideo.play();
 
       gameEnd.style.opacity = 0;
