@@ -37,9 +37,7 @@ const matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
   width: 1920,
   height: 1080,
 });
-const MatchCreatedVideoContainer = document.querySelector(
-  ".MatchCreatedVideoContainer"
-);
+const MatchCreatedVideoContainer = document.querySelector(".MatchInitialized");
 
 function updateSeriesTitle() {
   const seriesTextDiv = document.getElementById("Series-Text");
