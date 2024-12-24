@@ -340,8 +340,8 @@ sosSocket.addEventListener("message", (event) => {
     }
 
     if (parsed.event === "game:match_created") {
-      MatchCreatedVideoContainer.style.opacity = 1;
       matchCreatedVideo.play();
+      MatchCreatedVideoContainer.style.opacity = 1;
     }
 
     if (parsed.event === "game:goal_scored") {
