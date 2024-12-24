@@ -1023,9 +1023,9 @@ sosSocket.addEventListener("message", (event) => {
     }
 
     if (parsed.event === "game:match_destroyed") {
-      gameEnd.style.opacity = 1;
-      gameEnd.play();
-      PostGameScoreboard.style.opacity = 0;
+      //  gameEnd.style.opacity = 1;
+      //  gameEnd.play();
+      //  PostGameScoreboard.style.opacity = 0;
       PostGameOverlay.style.opacity = 0;
     }
 
