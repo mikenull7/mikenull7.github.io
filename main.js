@@ -330,6 +330,11 @@ sosSocket.addEventListener("message", (event) => {
         "#" + `${OrangeColorPrimary}`;
     }
 
+    if (parsed.event === "game:pre_countdown_begin") {
+      MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
+      matchCreatedVideo.pause();
+    }
+
     if (parsed.event === "game:goal_scored") {
       console.log(parsed.data);
       const ReplayText = document.getElementById("replay-text");
@@ -384,10 +389,6 @@ sosSocket.addEventListener("message", (event) => {
         replaySwipe.style.opacity = 0;
         replaySwipe.style.transition = "opacity 1s";
       }, 1000);
-    }
-
-    if (parsed.event === "game:round_started_go") {
-      gameStart.currentTime = 0; // Rewind to the start;
     }
 
     if (parsed.event === "game:match_ended") {
@@ -703,10 +704,7 @@ sosSocket.addEventListener("message", (event) => {
       setElementsOpacity(1);
       gameStart.style.opacity = 0;
     }
-    if (parsed.event === "game:pre_countdown_begin") {
-      MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
-      matchCreatedVideo.pause();
-    }
+
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
       gameEnd.currentTime = 0;
