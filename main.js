@@ -38,6 +38,10 @@ const matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
   height: 1080,
 });
 const MatchCreatedVideoContainer = document.querySelector(".MatchInitialized");
+// Select the iframe
+const vimeoPlayer1 = document.querySelector('iframe[title="vimeo-player-1"]');
+// Create a Vimeo Player instance
+const PodiumBackground = new Vimeo.Player(vimeoPlayer1);
 
 function updateSeriesTitle() {
   const seriesTextDiv = document.getElementById("Series-Text");
@@ -879,6 +883,7 @@ sosSocket.addEventListener("message", (event) => {
     if (parsed.event === "game:podium_start") {
       console.log("Podium Started");
       console.log(latestGameState);
+      PodiumBackground.play();
 
       // Select PostGameData container
       const PostGameOverlay = document.querySelector(".PostGameData");
