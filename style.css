@@ -676,7 +676,7 @@ opacity: 0;
   position: absolute;
   font-family: Inter;
   font-size: 40px;
-  left: 40%;
+  left: 42%;
 }
 
 
@@ -685,7 +685,7 @@ opacity: 0;
   font-family: Inter;
   font-size: 40px;
   top: 50%;
-  right: -100px;
+  left: 40%;
 }
 
 
@@ -699,7 +699,7 @@ opacity: 0;
 #GoalTime {
   position: absolute;
   top: 50%;
-  left: 40%;
+  right: -100px;
 }
 
 #replay-text {

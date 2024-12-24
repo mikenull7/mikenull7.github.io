@@ -45,7 +45,7 @@ const PodiumBackground = new Vimeo.Player(vimeoPlayer1);
 
 function updateSeriesTitle() {
   const seriesTextDiv = document.getElementById("Series-Text");
-  seriesTextDiv.innerHTML = `GAME ${gamesPlayed} BEST OF 7`;
+  seriesTextDiv.innerHTML = `GAME ${gamesPlayed} | BEST OF 7`;
 }
 // Function to update the divs with the current win counts
 function updateWinDivs() {
@@ -451,7 +451,7 @@ sosSocket.addEventListener("message", (event) => {
       iconContainer.className = "statfeed-icon-container";
       const icon = document.createElement("img");
       icon.className = "statfeed-icon";
-      icon.src = `./${statEventType}.png`;
+      icon.src = `./Overlay_images./${statEventType}.png`;
       iconContainer.appendChild(icon);
 
       // Create the text container for player names
@@ -582,6 +582,12 @@ sosSocket.addEventListener("message", (event) => {
       document.querySelector(
         ".StatBar-Orange"
       ).style.borderColor = `#${OrangeColorPrimary}`;
+      document.querySelector(
+        ".BlueTeam .PlayerStats"
+      ).style.borderColor = `#${BlueColorPrimary}`;
+      document.querySelector(
+        ".OrangeTeam .PlayerStats"
+      ).style.borderColor = `#${OrangeColorPrimary}`;
       // STAT BAR COLORS //
       const BlueStatBarFIllColors = {
         BlueGoalsBar: document.querySelector("#BlueGoalsBar"),
@@ -589,6 +595,7 @@ sosSocket.addEventListener("message", (event) => {
         BlueSavesBar: document.querySelector("#BlueSavesBar"),
         BlueShotsBar: document.querySelector("#BlueShotsBar"),
         BlueDemosBar: document.querySelector("#BlueDemosBar"),
+        BlueScoreBar: document.querySelector("#BlueScoreBar"),
       };
 
       const OrangeStatBarFIllColors = {
@@ -596,7 +603,7 @@ sosSocket.addEventListener("message", (event) => {
         OrangeAssistsBar: document.querySelector("#OrangeAssistsBar"),
         OrangeSavesBar: document.querySelector("#OrangeSavesBar"),
         OrangeShotsBar: document.querySelector("#OrangeShotsBar"),
-        OrangeDemosBar: document.querySelector("#OrangeDemosBar"),
+        OrangeScoreBar: document.querySelector("#OrangeScoreBar"),
       };
 
       for (let key in BlueStatBarFIllColors) {
@@ -903,7 +910,7 @@ sosSocket.addEventListener("message", (event) => {
       function adjustPlayerFontSize(element, name) {
         const maxFontSize = 50;
         const minFontSize = 40;
-        const maxNameLength = 9;
+        const maxNameLength = 8;
 
         element.style.fontSize =
           name.length > maxNameLength ? `${minFontSize}px` : `${maxFontSize}px`;
@@ -951,6 +958,7 @@ sosSocket.addEventListener("message", (event) => {
           saves: calculateTeamStatTotal(BlueTeamPlayers, "saves"),
           shots: calculateTeamStatTotal(BlueTeamPlayers, "shots"),
           demos: calculateTeamStatTotal(BlueTeamPlayers, "demos"),
+          score: calculateTeamStatTotal(BlueTeamPlayers, "score"),
         };
 
         const orangeStats = {
@@ -959,6 +967,7 @@ sosSocket.addEventListener("message", (event) => {
           saves: calculateTeamStatTotal(OrangeTeamPlayers, "saves"),
           shots: calculateTeamStatTotal(OrangeTeamPlayers, "shots"),
           demos: calculateTeamStatTotal(OrangeTeamPlayers, "demos"),
+          score: calculateTeamStatTotal(OrangeTeamPlayers, "score"),
         };
 
         function setBarWidths(statName, blueValue, orangeValue) {
@@ -978,6 +987,7 @@ sosSocket.addEventListener("message", (event) => {
         setBarWidths("Saves", blueStats.saves, orangeStats.saves);
         setBarWidths("Shots", blueStats.shots, orangeStats.shots);
         setBarWidths("Demos", blueStats.demos, orangeStats.demos);
+        setBarWidths("Score", blueStats.score, orangeStats.score);
       }
 
       // Set player names and stats dynamically
@@ -997,7 +1007,8 @@ sosSocket.addEventListener("message", (event) => {
             ${player.assists}<br>
             ${player.saves}<br>
             ${player.shots}<br>
-            ${player.demos}
+            ${player.demos}<br>
+            ${player.score}
           `;
         });
 
@@ -1016,7 +1027,8 @@ sosSocket.addEventListener("message", (event) => {
             ${player.assists}<br>
             ${player.saves}<br>
             ${player.shots}<br>
-            ${player.demos}
+            ${player.demos}<br>
+            ${player.score}
           `;
         });
 
