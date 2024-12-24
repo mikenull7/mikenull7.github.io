@@ -339,6 +339,11 @@ sosSocket.addEventListener("message", (event) => {
       matchCreatedVideo.setCurrentTime(0);
     }
 
+    if (parsed.event === "game:match_created") {
+      MatchCreatedVideoContainer.style.opacity = 1;
+      matchCreatedVideo.play();
+    }
+
     if (parsed.event === "game:goal_scored") {
       console.log(parsed.data);
       const ReplayText = document.getElementById("replay-text");
@@ -644,8 +649,6 @@ sosSocket.addEventListener("message", (event) => {
       gameStart.play();
       PostGameOverlay.style.opacity = 0;
       gameEnd.style.opacity = 0;
-      MatchCreatedVideoContainer.style.opacity = 1;
-      MatchCreatedVideoContainer.style.display = "block";
       matchCreatedVideo.play();
 
       const elements = {
