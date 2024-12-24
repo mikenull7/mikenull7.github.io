@@ -335,6 +335,10 @@ sosSocket.addEventListener("message", (event) => {
       matchCreatedVideo.pause();
     }
 
+    if (parsed.event === "game:round_started_go") {
+      matchCreatedVideo.setCurrentTime(0);
+    }
+
     if (parsed.event === "game:goal_scored") {
       console.log(parsed.data);
       const ReplayText = document.getElementById("replay-text");
