@@ -702,8 +702,6 @@ sosSocket.addEventListener("message", (event) => {
       // Set opacity to 1 when the pre countdown begins
       setElementsOpacity(1);
       gameStart.style.opacity = 0;
-      MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
-      matchCreatedVideo.pause();
     }
     if (parsed.event === "game:pre_countdown_begin") {
       MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
