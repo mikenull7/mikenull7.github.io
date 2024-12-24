@@ -702,9 +702,8 @@ sosSocket.addEventListener("message", (event) => {
       // Set opacity to 1 when the pre countdown begins
       setElementsOpacity(1);
       gameStart.style.opacity = 0;
-      if (MatchCreatedVideoContainer) {
-        MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
-      }
+      MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
+      matchCreatedVideo.pause();
     }
     if (parsed.event === "game:round_started_go") {
       gameStart.currentTime = 0; // Rewind to the start;
