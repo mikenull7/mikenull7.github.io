@@ -603,6 +603,7 @@ sosSocket.addEventListener("message", (event) => {
         OrangeAssistsBar: document.querySelector("#OrangeAssistsBar"),
         OrangeSavesBar: document.querySelector("#OrangeSavesBar"),
         OrangeShotsBar: document.querySelector("#OrangeShotsBar"),
+        OrangeDemosBar: document.querySelector("#OrangeDemosBar"),
         OrangeScoreBar: document.querySelector("#OrangeScoreBar"),
       };
 
