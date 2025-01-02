@@ -603,8 +603,8 @@ sosSocket.addEventListener("message", (event) => {
         OrangeAssistsBar: document.querySelector("#OrangeAssistsBar"),
         OrangeSavesBar: document.querySelector("#OrangeSavesBar"),
         OrangeShotsBar: document.querySelector("#OrangeShotsBar"),
-        OrangeDemosBar: document.getElementById("OrangeDemosBar"),
         OrangeScoreBar: document.querySelector("#OrangeScoreBar"),
+        OrangeDemosBar: document.querySelector("#OrangeDemosBar"),
       };
 
       for (let key in BlueStatBarFIllColors) {
