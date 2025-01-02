@@ -30,11 +30,14 @@ let orangeTeamWins = 0;
 let gamesPlayed = 1;
 let eventQueue = [];
 const eventDisplayTimeout = 2000;
+const matchCreatedVideo = new Vimeo.Player("MatchCreatedVideo", {
+  id: 1041310123, // Match Created Vimeo video ID
+  loop: true,
+  autoplay: false, // We'll control autoplay manually
+  width: 1920,
+  height: 1080,
+});
 const MatchCreatedVideoContainer = document.querySelector(".MatchInitialized");
-const vimeoMatchCreated = document.querySelector(
-  'iframe[title="MatchCreatedVideo"]'
-);
-const MatchCreatedVideo = new Vimeo.Player(vimeoMatchCreated);
 // Select the iframe
 const vimeoPlayer1 = document.querySelector('iframe[title="vimeo-player-1"]');
 // Create a Vimeo Player instance
@@ -337,11 +340,11 @@ sosSocket.addEventListener("message", (event) => {
     }
 
     if (parsed.event === "game:round_started_go") {
-      MatchCreatedVideo.setCurrentTime(0);
+      matchCreatedVideo.setCurrentTime(0);
     }
 
     if (parsed.event === "game:match_created") {
-      MatchCreatedVideo.play();
+      matchCreatedVideo.play();
       MatchCreatedVideoContainer.style.opacity = 1;
     }
 
