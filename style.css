@@ -1223,13 +1223,11 @@ opacity: 0;
 
 .StatBar-Blue {
   height: 100%;
-  background-color: purple;
   border-radius: 8px 0 0 8px;
 }
 
 .StatBar-Orange {
   height: 100%;
-  background-color: red;
   border-radius: 0 8px 8px 0;
 }
 
