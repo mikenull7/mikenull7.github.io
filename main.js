@@ -589,8 +589,11 @@ sosSocket.addEventListener("message", (event) => {
         ".OrangeTeam .PlayerStats"
       ).style.borderColor = `#${OrangeColorPrimary}`;
       document.querySelector(
-        "#OrangeDemosBar"
-      ).style.borderColor = `#${BlueColorPrimary}`;
+        ".StatBar-Blue"
+      ).style.backgroundColor = `#${BlueColorPrimary}`;
+      document.querySelector(
+        ".StatBar-Orange"
+      ).style.backgroundColor = `#${OrangeColorPrimary}`;
 
       // STAT BAR COLORS //
       const BlueStatBarFIllColors = {

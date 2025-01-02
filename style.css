@@ -1236,7 +1236,3 @@ opacity: 0;
 .MatchInitialized {
   transition: opacity 0.5s ease-in-out;
 }
-
-#OrangeDemosBar {
-  background-color: green;
-}
