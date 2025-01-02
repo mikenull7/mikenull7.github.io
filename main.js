@@ -588,6 +588,10 @@ sosSocket.addEventListener("message", (event) => {
       document.querySelector(
         ".OrangeTeam .PlayerStats"
       ).style.borderColor = `#${OrangeColorPrimary}`;
+      document.querySelector(
+        "#OrangeDemosBar"
+      ).style.borderColor = `#${OrangeColorPrimary}`;
+
       // STAT BAR COLORS //
       const BlueStatBarFIllColors = {
         BlueGoalsBar: document.querySelector("#BlueGoalsBar"),
@@ -604,7 +608,6 @@ sosSocket.addEventListener("message", (event) => {
         OrangeSavesBar: document.querySelector("#OrangeSavesBar"),
         OrangeShotsBar: document.querySelector("#OrangeShotsBar"),
         OrangeScoreBar: document.querySelector("#OrangeScoreBar"),
-        OrangeDemosBar: document.querySelector("#OrangeDemosBar"),
       };
 
       for (let key in BlueStatBarFIllColors) {
