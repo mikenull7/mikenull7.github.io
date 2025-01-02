@@ -430,7 +430,8 @@ sosSocket.addEventListener("message", (event) => {
         // Add additional logic here to handle a series win (e.g., display a message, trigger animations, etc.)
       }
     }
-
+    ////////  COMMENTINGG OUT FOR VERCEL USE, WILL WORK ON DEV/LOCAL USE /////////
+    /*
     if (parsed.event === "game:statfeed_event") {
       console.log(parsed.data);
       const statEventType = parsed.data.type;
@@ -517,6 +518,7 @@ sosSocket.addEventListener("message", (event) => {
         document.getElementById("statfeed-container").removeChild(firstEvent);
       }
     }
+      */
 
     if (parsed.event === "game:update_state") {
       // STYLING COLORS HERE FOR SCOREBOARD AND BOOST METERS //
