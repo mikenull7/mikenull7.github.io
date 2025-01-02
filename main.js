@@ -590,7 +590,7 @@ sosSocket.addEventListener("message", (event) => {
       ).style.borderColor = `#${OrangeColorPrimary}`;
       document.querySelector(
         "#OrangeDemosBar"
-      ).style.borderColor = `#${OrangeColorPrimary}`;
+      ).style.borderColor = `#${BlueColorPrimary}`;
 
       // STAT BAR COLORS //
       const BlueStatBarFIllColors = {
