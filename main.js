@@ -91,6 +91,9 @@ sosSocket.addEventListener("message", (event) => {
       latestGameState = parsed.data; // Save the latest update state
     }
 
+    if (parsed.event === "custom:title") {
+      console.log("New title:", parsed.data);
+    }
     if (parsed.event === "game:update_state") {
       if (parsed.data.game.hasTarget) {
         const targetPlayer = parsed.data.players[parsed.data.game.target];
