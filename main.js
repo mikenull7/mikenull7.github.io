@@ -87,6 +87,7 @@ sosSocket.addEventListener("message", (event) => {
 sosSocket.addEventListener("message", (event) => {
   const parsed = JSON.parse(event.data);
   console.log("📦 Event received:", parsed.event);
+  console.log("PARSED", parsed);
 
   if (parsed.event === "custom:title") {
     const title = parsed.data;
