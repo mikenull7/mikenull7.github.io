@@ -92,7 +92,7 @@ sosSocket.addEventListener("message", (event) => {
     }
 
     if (parsed.event === "custom:title") {
-      console.log("New title:", parsed.data);
+      console.log("New title:", parsed);
     }
     if (parsed.event === "game:update_state") {
       if (parsed.data.game.hasTarget) {
