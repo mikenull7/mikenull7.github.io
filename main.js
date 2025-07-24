@@ -86,14 +86,14 @@ sosSocket.addEventListener("message", (event) => {
 // NEW MESSAGE EVENT HERE GO BACK TO THE OLD ONE IF BROKE //
 sosSocket.addEventListener("message", (event) => {
   const parsed = JSON.parse(event.data);
+  console.log("event", event);
+  console.log("event.data", event.data);
+  console.log("message", message);
   // console.log("📦 Event received:", parsed.event);
 
   if (parsed.event === "custom:title") {
     const title = parsed.data;
     console.log("🏷️ Received custom title:", title);
-    console.log("event", event);
-    console.log("event.data", event.data);
-    console.log("message", message);
   }
 
   const gameStart = document.getElementById("game-start-flyover");
