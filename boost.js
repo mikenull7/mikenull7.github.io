@@ -14,7 +14,7 @@ export const setTargetPlayerPlayerBoostStroke = (boost) => {
 export const setTargetPlayerBoost = (boost) => {
   targetPlayer.boost = boost;
 
-  console.log("Target player boost set:", targetPlayer.boost);
+  // console.log("Target player boost set:", targetPlayer.boost);
 
   setTargetPlayerPlayerBoostStroke(targetPlayer.boost);
   document.querySelector("#target-boost-value").innerHTML = `${boost}`;

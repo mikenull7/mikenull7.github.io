@@ -86,11 +86,14 @@ sosSocket.addEventListener("message", (event) => {
 // NEW MESSAGE EVENT HERE GO BACK TO THE OLD ONE IF BROKE //
 sosSocket.addEventListener("message", (event) => {
   const parsed = JSON.parse(event.data);
-  console.log("📦 Event received:", parsed.event);
+  // console.log("📦 Event received:", parsed.event);
 
   if (parsed.event === "custom:title") {
     const title = parsed.data;
     console.log("🏷️ Received custom title:", title);
+    console.log("event", event);
+    console.log("event.data", event.data);
+    console.log("message", message);
   }
 
   const gameStart = document.getElementById("game-start-flyover");
@@ -109,7 +112,7 @@ sosSocket.addEventListener("message", (event) => {
     if (parsed.data.game.hasTarget) {
       const targetPlayer = parsed.data.players[parsed.data.game.target];
       setTargetPlayerBoost(targetPlayer.boost);
-      console.log("boost meter on");
+      // console.log("boost meter on");
       document.getElementById("target-player").style.opacity = 100;
     } else if (parsed.data.game.hasTarget == false) {
       // console.log("boost meter off");
@@ -119,7 +122,7 @@ sosSocket.addEventListener("message", (event) => {
     if (parsed.data.game.hasTarget) {
       const targetPlayer = parsed.data.players[parsed.data.game.target];
       PlayerStatCardName(targetPlayer.name);
-      console.log(targetPlayer.name);
+      //  console.log(targetPlayer.name);
     }
 
     if (parsed.data.game.hasTarget) {
@@ -363,13 +366,13 @@ sosSocket.addEventListener("message", (event) => {
   }
 
   if (parsed.event === "game:goal_scored") {
-    console.log(parsed.data);
+    //  console.log(parsed.data);
     const ReplayText = document.getElementById("replay-text");
     ReplayText.innerHTML = "REPLAY";
     const ScorerTeam = parsed.data.scorer.teamnum;
-    console.log(ScorerTeam);
+    // console.log(ScorerTeam);
     const ScorerName = parsed.data.scorer.name;
-    console.log(ScorerName);
+    // console.log(ScorerName);
     const ScorerText = document.getElementById("Scorer");
     ScorerText.innerHTML = `${ScorerName}`;
     const AssisterName = parsed.data.assister.name;
@@ -408,7 +411,7 @@ sosSocket.addEventListener("message", (event) => {
   //REPLAY LOGO
   const replaySwipe = document.getElementById("replay-swipe");
   if (parsed.event === "game:replay_start") {
-    console.log("Replay started");
+    // console.log("Replay started");
     replaySwipe.style.opacity = 1;
     replaySwipe.style.transition = "opacity 0s";
     setTimeout(() => {
@@ -900,7 +903,7 @@ sosSocket.addEventListener("message", (event) => {
   }
   if (parsed.event === "game:podium_start") {
     console.log("Podium Started");
-    console.log(latestGameState);
+    // console.log(latestGameState);
     PodiumBackground.play();
 
     // Select PostGameData container

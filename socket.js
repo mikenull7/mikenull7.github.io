@@ -1,17 +1,17 @@
 export const sosSocket = new WebSocket("ws://localhost:49122");
 
 sosSocket.onopen = () => {
-  console.log("Connected to SOS. howm any times left");
+  console.log("Connected to SOS. how many times do we have to do this");
 };
 
 sosSocket.addEventListener("message", (event) => {
   const message = event.data;
 
-  console.log(message);
+  // console.log(message);
   // Handle incoming messages from the server
 });
 sosSocket.onmessage = (event) => {
-  console.log(event.data);
+  //console.log(event.data);
 };
 
 export const forwardToOverlay = (message) => {
