@@ -86,10 +86,7 @@ sosSocket.addEventListener("message", (event) => {
 // NEW MESSAGE EVENT HERE GO BACK TO THE OLD ONE IF BROKE //
 sosSocket.addEventListener("message", (event) => {
   const parsed = JSON.parse(event.data);
-  console.log("event", event);
-  console.log("event.data", event.data);
-  console.log("message", message);
-  // console.log("📦 Event received:", parsed.event);
+  console.log("📦 Event received:", parsed.event);
 
   if (parsed.event === "custom:title") {
     const title = parsed.data;
@@ -903,7 +900,7 @@ sosSocket.addEventListener("message", (event) => {
   }
   if (parsed.event === "game:podium_start") {
     console.log("Podium Started");
-    // console.log(latestGameState);
+    console.log(latestGameState);
     PodiumBackground.play();
 
     // Select PostGameData container
