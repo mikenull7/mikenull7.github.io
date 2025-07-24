@@ -14,6 +14,30 @@ sosSocket.onmessage = (event) => {
   //console.log(event.data);
 };
 
+export const relaySocket = new WebSocket("ws://localhost:8081");
+
+relaySocket.onopen = () => {
+  console.log("✅ Connected to Relay");
+
+  // Register for custom:title
+  relaySocket.send(
+    JSON.stringify({
+      event: "wsRelay:register",
+      data: "custom:title",
+    })
+  );
+};
+
+relaySocket.addEventListener("message", (event) => {
+  const parsed = JSON.parse(event.data);
+  console.log("📡 Relay Message:", parsed.event, parsed.data);
+
+  if (parsed.event === "custom:title") {
+    console.log("🏷️ Received custom title:", parsed.data);
+    // TODO: Update overlay title DOM here
+  }
+});
+
 export const forwardToOverlay = (message) => {
   const overlaySocket = new WebSocket("wss://mikenull7-guthub-io.vercel.app"); // Your Vercel WebSocket URL
 
