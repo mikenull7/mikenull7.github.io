@@ -97,6 +97,25 @@
   width: 100px;
 }
 
+.title {
+  color: white;
+  position: absolute;
+  font-family: Inter;
+  left: 0px;
+  width: 1000px;
+  height: 30px;
+  top: -30px;
+  background:rgba(0, 0, 0, .6);
+  border-radius: 8px;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 4px;
+  word-spacing: 10px;
+  font-size: 20px;
+}
+
 .scorebug {
   color: white;
   position: absolute;
@@ -104,7 +123,7 @@
   left: 455px;
   width: 1000px;
   height: 96px;
-  top: 16px;
+  top: 40px;
   background: #373d4a;
   border-radius: 8px;
   display: grid;
@@ -738,7 +757,7 @@ opacity: 0;
   position: absolute;
   width: 400px;
   height: 40px;
-  top: 112px;
+  top: 136px;
   left: 755px;
   background-color:#373d4a;
   font-family: Inter;

@@ -92,6 +92,8 @@ sosSocket.addEventListener("message", (event) => {
   if (parsed.event === "custom:title") {
     const title = parsed.data;
     console.log("🏷️ Received custom title:", title);
+    const overlayTitle = document.getElementsById("title");
+    overlayTitle.innerHTML = title;
   }
 
   const gameStart = document.getElementById("game-start-flyover");
