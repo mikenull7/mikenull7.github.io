@@ -28,13 +28,29 @@ relaySocket.onopen = () => {
   );
 };
 
-relaySocket.addEventListener("message", (event) => {
-  const parsed = JSON.parse(event.data);
+relaySocket.addEventListener("message", async (event) => {
+  let parsed;
+
+  try {
+    if (event.data instanceof Blob) {
+      const text = await event.data.text(); // Convert Blob to string
+      parsed = JSON.parse(text);
+    } else {
+      parsed = JSON.parse(event.data); // Already a string
+    }
+  } catch (err) {
+    console.error("❌ Failed to parse message:", err, event.data);
+    return;
+  }
+
   console.log("📡 Relay Message:", parsed.event, parsed.data);
 
   if (parsed.event === "custom:title") {
     console.log("🏷️ Received custom title:", parsed.data);
-    // TODO: Update overlay title DOM here
+    const titleEl = document.querySelector(".title");
+    if (titleEl) {
+      titleEl.textContent = parsed.data;
+    }
   }
 });
 
