@@ -95,7 +95,11 @@ sosSocket.addEventListener("message", (event) => {
     const overlayTitle = document.getElementsById("title");
     overlayTitle.innerHTML = title;
   }
-
+  const teamIcons = [
+    document.getElementById("blue-icon"),
+    document.getElementById("orange-icon"),
+    document.getElementById("backgroundimages"),
+  ];
   const gameStart = document.getElementById("game-start-flyover");
   const gameEnd = document.getElementById("game-end-hypechamber");
   const PostGameScoreboard = document.getElementById("PostGame-bg");
@@ -317,10 +321,15 @@ sosSocket.addEventListener("message", (event) => {
 
     //OVERTIME LOGO
     const overtimeLogo = document.getElementById("overtime-logo");
+    const seriesTextDiv = document.getElementById("Series-Text");
     if (parsed.data.game.isOT) {
-      overtimeLogo.style.opacity = 1;
+      overtimeLogo.style.opacity = 0;
+      seriesTextDiv.innerHTML = `GAME ${gamesPlayed} | OVERTIME`;
+      seriesTextDiv.style.color = "rgba(200, 0, 0, 1)";
     } else {
       overtimeLogo.style.opacity = 0;
+      seriesTextDiv.innerHTML = `GAME ${gamesPlayed} | BEST OF 7`;
+      seriesTextDiv.style.color = "white";
     }
   }
   // SERIES CONTAINER
@@ -354,6 +363,7 @@ sosSocket.addEventListener("message", (event) => {
   if (parsed.event === "game:pre_countdown_begin") {
     MatchCreatedVideoContainer.style.opacity = 0; // Fades out with transition
     matchCreatedVideo.pause();
+    teamIcons.forEach((icon) => (icon.style.display = "block"));
   }
 
   if (parsed.event === "game:round_started_go") {
@@ -363,6 +373,7 @@ sosSocket.addEventListener("message", (event) => {
   if (parsed.event === "game:match_created") {
     matchCreatedVideo.play();
     MatchCreatedVideoContainer.style.opacity = 1;
+    teamIcons.forEach((icon) => (icon.style.display = "none"));
   }
 
   if (parsed.event === "game:goal_scored") {
@@ -1062,6 +1073,7 @@ sosSocket.addEventListener("message", (event) => {
     // gameStart.style.opacity = 1;
     //  gameStart.play();
     PostGameOverlay.style.opacity = 0;
+    teamIcons.forEach((icon) => (icon.style.display = "none"));
     // Play Match Created Video
     MatchCreatedVideoContainer.style.opacity = 1;
     matchCreatedVideo.play();

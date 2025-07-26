@@ -52,6 +52,26 @@ relaySocket.addEventListener("message", async (event) => {
       titleEl.textContent = parsed.data;
     }
   }
+
+  if (parsed.event === "custom:blueLogo") {
+    const blueIcon = document.getElementById("blue-icon");
+    if (blueIcon) {
+      blueIcon.src =
+        parsed.data === "default"
+          ? "./Overlay_images/octane_faceright.png"
+          : `data:image/png;base64,${parsed.data}`;
+    }
+  }
+
+  if (parsed.event === "custom:orangeLogo") {
+    const orangeIcon = document.getElementById("orange-icon");
+    if (orangeIcon) {
+      blueIcon.src =
+        parsed.data === "default"
+          ? "./Overlay_images/octane_faceright.png"
+          : `data:image/png;base64,${parsed.data}`;
+    }
+  }
 });
 
 export const forwardToOverlay = (message) => {

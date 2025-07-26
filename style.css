@@ -97,6 +97,40 @@
   width: 100px;
 }
 
+img#blue-icon {
+  position:absolute;
+  max-width: 125px;
+  max-height: 125px;
+  left: 326px;
+  top: 50px;
+  z-index: 1;
+  display: block;
+  opacity: 1;
+}
+
+img#orange-icon {
+  position:absolute;
+  max-width: 125px;
+  max-height: 125px;
+  right: 336px;
+  top: 50px;
+  z-index: 1;
+  display: block;
+  opacity: 1;
+}
+
+#backgroundimages {
+   position: absolute;
+  width: 1250px;
+  height: 96px;
+   top: 89px;
+  left: 50%;
+    transform: translate(-50%, -50%);
+  background:rgba(0, 0, 0, .6);
+  border-radius: 8px;
+  z-index: 0;
+}
+
 .title {
   color: white;
   position: absolute;
@@ -129,6 +163,7 @@
   display: grid;
   grid-template-columns: 400px 200px 400px;
   align-items: center;
+  z-index: 2;
 }
 
 .team {
@@ -623,7 +658,7 @@ opacity: 0;
 
 #overtime-logo {
 position: absolute;
-top: 150px;
+top: 175px;
 left: 755px;
 transition: opacity .5s;
 opacity: 0;
@@ -763,6 +798,7 @@ opacity: 0;
   font-family: Inter;
   font-size: 30px;
   border-radius: 0px 0px 8px 8px;
+  z-index: 3;
 }
 
 
