@@ -66,7 +66,7 @@ relaySocket.addEventListener("message", async (event) => {
   if (parsed.event === "custom:orangeLogo") {
     const orangeIcon = document.getElementById("orange-icon");
     if (orangeIcon) {
-      blueIcon.src =
+      orangeIcon.src =
         parsed.data === "default"
           ? "./Overlay_images/octane_faceright.png"
           : `data:image/png;base64,${parsed.data}`;
