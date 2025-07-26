@@ -19,13 +19,21 @@ export const relaySocket = new WebSocket("ws://localhost:8081");
 relaySocket.onopen = () => {
   console.log("✅ Connected to Relay");
 
-  // Register for custom:title
-  relaySocket.send(
-    JSON.stringify({
-      event: "wsRelay:register",
-      data: "custom:title",
-    })
-  );
+  // Register for each custom event
+  const eventsToRegister = [
+    "custom:title",
+    "custom:blueLogo",
+    "custom:orangeLogo",
+  ];
+
+  eventsToRegister.forEach((eventName) => {
+    relaySocket.send(
+      JSON.stringify({
+        event: "wsRelay:register",
+        data: eventName,
+      })
+    );
+  });
 };
 
 relaySocket.addEventListener("message", async (event) => {
